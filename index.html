@@ -1,48 +1,82 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ENJIN Marketing Diagnosis Tool</title>
-<style>
-  body { font-family: sans-serif; padding: 20px; max-width: 720px; margin: auto; line-height: 1.6; }
-  .hidden { display: none; }
-  .question { margin-bottom: 20px; }
-  .question img { width: 32px; height: 32px; margin-right: 8px; vertical-align: middle; }
-  .question label { margin-right: 12px; }
-  .result-icon { width: 48px; height: 48px; vertical-align: middle; margin-right: 12px; }
-  .final-image { width: 100%; height: auto; border-radius: 8px; margin-bottom: 16px; }
-  button { margin-top: 10px; padding: 8px 16px; font-size: 16px; }
-</style>
+  <meta charset="UTF-8">
+  <title>ENJIN マーケティング診断ツール</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      line-height: 1.5;
+    }
+    .hidden {
+      display: none;
+    }
+    .question-container,
+    #result-container,
+    #step1-container,
+    #final-container {
+      margin-bottom: 20px;
+    }
+    .question-icon {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .result-icon {
+      width: 80px;
+      height: 80px;
+    }
+    .final-image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 16px;
+    }
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
-<h1>ENJIN マーケティング診断ツール</h1>
-
-<div id="initial-phase">
-  <h2>ステップ0：初期診断（ 12問）</h2>
-  <div id="question-container"></div>
-  <button id="next-button">診断する</button>
-</div>
-
-<div id="initial-result" class="hidden">
-  <h2>診断結果</h2>
-  <div id="result-content"></div>
-  <button id="start-step1-button">ステップ1を始める</button>
-</div>
-
-<div id="step1-phase" class="hidden">
-  <h2>ステップ1：4C分析（10問）</h2>
-  <div id="step1-question-container"></div>
-  <button id="step1-next-button">結果を見る</button>
-</div>
-
-<div id="step1-result" class="hidden">
-  <h2>STEP1の結果</h2>
-  <div id="step1-result-content"></div>
-  <p>詳細な戦略についてご相談をご希望の場合は、ENJIN TOKYOまでご連続ください。<br>
-    <a href="mailto:info@enjintokyo.com">info@enjintokyo.com</a></p>
-</div>
-
-<script src="script.js"></script>
+  <h1>ENJIN マーケティング診断ツール</h1>
+  <div id="step0-container">
+    <div class="question-container">
+      <img id="question-icon" class="question-icon" src="" alt="">
+      <p id="question-text"></p>
+      <button id="yes-btn">はい</button>
+      <button id="no-btn">いいえ</button>
+    </div>
+  </div>
+  <div id="result-container" class="hidden">
+    <img id="result-icon" class="result-icon" src="" alt="">
+    <h2 id="result-title"></h2>
+    <p id="result-summary"></p>
+    <button id="go-to-step1-btn">ステップ1へ進む</button>
+  </div>
+  <div id="step1-container" class="hidden">
+    <h2>ステップ1：企業情報を自由にご入力ください</h2>
+    <p>貴社の現状や顧客、競合、市場の状況などを自由にご記入ください。AIが提供価値を導き出します。</p>
+    <textarea id="free-text" placeholder="例：当社は地方で飲食店を営んでおり、SNSでの発信はまだ得意ではありませんが、食材にこだわっています。最近競合店が増えてきました。"></textarea>
+    <br>
+    <button id="generate-suggestion-btn">提供価値を表示</button>
+  </div>
+  <div id="final-container" class="hidden">
+    <img id="final-image" class="final-image" src="" alt="">
+    <h2 id="final-title">ご提案内容</h2>
+    <p id="final-message"></p>
+    <p>さらに具体的なご相談をご希望の場合は、ENJIN TOKYOまでお問い合わせください。</p>
+    <p><a href="mailto:info@enjintokyo.com">info@enjintokyo.com</a></p>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
