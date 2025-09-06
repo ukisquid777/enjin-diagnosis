@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENJIN Marketing Diagnosis Tool</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; max-width: 640px; margin: auto; line-height: 1.6; }
+  .hidden { display: none; }
+  .question { margin-bottom: 20px; }
+  button { margin-top: 10px; padding: 10px 20px; }
+</style>
+</head>
+<body>
+
+<h1>ENJIN マーケティング診断ツール</h1>
+
+<div id="initial-phase">
+  <h2>ステップ0：初期診断（12問）</h2>
+  <div id="question-container"></div>
+  <button id="next-button">次へ</button>
+</div>
+
+<div id="initial-result" class="hidden">
+  <h2>診断結果</h2>
+  <p id="result-text"></p>
+  <button id="start-step1-button">ステップ1を始める</button>
+</div>
+
+<div id="step1-phase" class="hidden">
+  <h2>ステップ1：4C分析（10問）</h2>
+  <div id="step1-question-container"></div>
+  <button id="step1-next-button">次へ</button>
+</div>
+
+<div id="step1-result" class="hidden">
+  <h2>ステップ1の結果</h2>
+  <p id="step1-result-text"></p>
+  <p>この後に相談したい場合はENJIN TOKYOまでご連絡ください。<br>
+    <a href="mailto:info@enjintokyo.com">info@enjintokyo.com</a></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
