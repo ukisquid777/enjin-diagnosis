@@ -5,38 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ENJIN Marketing Diagnosis Tool</title>
 <style>
-  body { font-family: sans-serif; padding: 20px; max-width: 640px; margin: auto; line-height: 1.6; }
+  body { font-family: sans-serif; padding: 20px; max-width: 720px; margin: auto; line-height: 1.6; }
   .hidden { display: none; }
   .question { margin-bottom: 20px; }
-  button { margin-top: 10px; padding: 10px 20px; }
+  .question img { width: 32px; height: 32px; margin-right: 8px; vertical-align: middle; }
+  .question label { margin-right: 12px; }
+  .result-icon { width: 48px; height: 48px; vertical-align: middle; margin-right: 12px; }
+  .final-image { width: 100%; height: auto; border-radius: 8px; margin-bottom: 16px; }
+  button { margin-top: 10px; padding: 8px 16px; font-size: 16px; }
 </style>
 </head>
 <body>
-
 <h1>ENJIN マーケティング診断ツール</h1>
 
 <div id="initial-phase">
-  <h2>ステップ0：初期診断（12問）</h2>
+  <h2>ステップ0：初期診断（ 12問）</h2>
   <div id="question-container"></div>
-  <button id="next-button">次へ</button>
+  <button id="next-button">診断する</button>
 </div>
 
 <div id="initial-result" class="hidden">
   <h2>診断結果</h2>
-  <p id="result-text"></p>
+  <div id="result-content"></div>
   <button id="start-step1-button">ステップ1を始める</button>
 </div>
 
 <div id="step1-phase" class="hidden">
   <h2>ステップ1：4C分析（10問）</h2>
   <div id="step1-question-container"></div>
-  <button id="step1-next-button">次へ</button>
+  <button id="step1-next-button">結果を見る</button>
 </div>
 
 <div id="step1-result" class="hidden">
-  <h2>ステップ1の結果</h2>
-  <p id="step1-result-text"></p>
-  <p>この後に相談したい場合はENJIN TOKYOまでご連絡ください。<br>
+  <h2>STEP1の結果</h2>
+  <div id="step1-result-content"></div>
+  <p>詳細な戦略についてご相談をご希望の場合は、ENJIN TOKYOまでご連続ください。<br>
     <a href="mailto:info@enjintokyo.com">info@enjintokyo.com</a></p>
 </div>
 
